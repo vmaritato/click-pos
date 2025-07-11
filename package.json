@@ -2,15 +2,28 @@
   "name": "click-pos",
   "version": "0.1.0",
   "description": "A tiny TypeScript library to easily and precisely get x/y coordinates from click or touch events, relative to window, document, or any HTML element.",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
   "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "scripts": {
-    "build": "tsc",
-    "test": "echo 'No tests yet'"
+    "build": "tsup",
+    "build:tsc": "tsc",
+    "clean": "rm -rf dist",
+    "prepublishOnly": "npm run build",
+    "test": "jest",
+    "size": "size-limit",
+    "format": "prettier --write .",
+    "release": "standard-version"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/tuo-username/click-pos"
+    "url": "https://github.com/vmaritato/click-pos"
   },
   "keywords": [
     "click",
@@ -20,7 +33,32 @@
     "javascript",
     "react"
   ],
-  "author": "",
+  "author": "Vincenzo Maritato",
   "license": "MIT",
-  "type": "module"
+  "type": "module",
+  "sideEffects": false,
+  "size-limit": [
+    {
+      "path": "dist/index.js",
+      "import": "{ getClickPos, getTouchPositions, distance, angle, boundingBox }"
+    }
+  ],
+  "devDependencies": {
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/npm": "^12.0.2",
+    "@size-limit/preset-small-lib": "^11.2.0",
+    "@types/jest": "^30.0.0",
+    "@types/jsdom": "^21.1.7",
+    "jest": "^30.0.4",
+    "jest-environment-jsdom": "^30.0.4",
+    "jsdom": "^26.1.0",
+    "prettier": "^3.6.2",
+    "semantic-release": "^24.2.6",
+    "size-limit": "^11.2.0",
+    "standard-version": "^9.5.0",
+    "ts-jest": "^29.4.0",
+    "tsup": "^8.5.0",
+    "typescript": "^5.8.3"
+  }
 }

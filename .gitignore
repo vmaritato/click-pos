@@ -1,0 +1,31 @@
+# Node
+node_modules/
+dist/
+coverage/
+.nyc_output/
+
+# TypeScript
+*.tsbuildinfo
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor
+.vscode/
+.idea/
+.DS_Store
+
+# Monorepo/Workspace
+.pnpm-debug.log*
+lerna-debug.log*
+
+# Env
+.env*
+
+# CI
+/.size-limit.json
+
+# Misc
+*.local 

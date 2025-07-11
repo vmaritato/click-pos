@@ -5,6 +5,19 @@
     "declaration": true,
     "outDir": "dist",
     "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "composite": false,
+    "rootDir": "src",
+    "baseUrl": ".",
+    "paths": {
+      "click-pos": ["src/index.ts"]
+    },
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "skipLibCheck": true
