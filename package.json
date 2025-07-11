@@ -1,6 +1,6 @@
 {
   "name": "click-pos",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A tiny TypeScript library to easily and precisely get x/y coordinates from click or touch events, relative to window, document, or any HTML element.",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
