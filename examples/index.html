@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>click-pos Example</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        margin: 2em;
+      }
+      #target {
+        width: 300px;
+        height: 200px;
+        background: #f0f0f0;
+        border: 2px dashed #888;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2em;
+      }
+      #output {
+        margin-top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>click-pos Example</h1>
+    <p>
+      Click or touch inside the box below to see the coordinates relative to the
+      element, window, and document.
+    </p>
+    <div id="target">Click or touch here</div>
+    <div id="output"></div>
+    <script type="module">
+      // This is a placeholder import. Replace with the actual import path after building the library.
+      // import { getClickPosition } from '../dist/index.js';
+
+      /**
+       * Example function to get coordinates from a MouseEvent or TouchEvent.
+       * Replace this with the actual library usage.
+       */
+      function getClickPosition(event, relativeTo = "element") {
+        let x, y;
+        if (event.touches && event.touches.length) {
+          x = event.touches[0].clientX;
+          y = event.touches[0].clientY;
+        } else {
+          x = event.clientX;
+          y = event.clientY;
+        }
+        if (relativeTo === "window") {
+          return { x, y };
+        } else if (relativeTo === "document") {
+          return {
+            x: x + window.scrollX,
+            y: y + window.scrollY,
+          };
+        } else if (relativeTo === "element") {
+          const rect = event.currentTarget.getBoundingClientRect();
+          return {
+            x: x - rect.left,
+            y: y - rect.top,
+          };
+        }
+      }
+
+      const target = document.getElementById("target");
+      const output = document.getElementById("output");
+
+      function showCoords(event) {
+        event.preventDefault();
+        const relElement = getClickPosition(event, "element");
+        const relWindow = getClickPosition(event, "window");
+        const relDocument = getClickPosition(event, "document");
+        output.innerHTML = `
+        <strong>Relative to element:</strong> x = ${relElement.x}, y = ${relElement.y}<br>
+        <strong>Relative to window:</strong> x = ${relWindow.x}, y = ${relWindow.y}<br>
+        <strong>Relative to document:</strong> x = ${relDocument.x}, y = ${relDocument.y}
+      `;
+      }
+
+      target.addEventListener("click", showCoords);
+      target.addEventListener("touchstart", showCoords);
+    </script>
+  </body>
+</html>
