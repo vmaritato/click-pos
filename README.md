@@ -5,21 +5,11 @@
 [![install size](https://packagephobia.com/badge?p=click-pos)](https://packagephobia.com/result?p=click-pos)
 [![bundlephobia](https://img.shields.io/bundlephobia/minzip/click-pos?style=flat-square)](https://bundlephobia.com/package/click-pos)
 [![npm downloads](https://img.shields.io/npm/dm/click-pos?style=flat-square)](https://www.npmjs.com/package/click-pos)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-GitHub%20Pages-blue?logo=github&style=flat-square)](https://vmaritato.github.io/click-pos/)
 [![CI](https://github.com/vmaritato/click-pos/actions/workflows/ci.yml/badge.svg)](https://github.com/vmaritato/click-pos/actions)
 [![Coverage Status](https://coveralls.io/repos/github/vmaritato/click-pos/badge.svg?branch=main)](https://coveralls.io/github/vmaritato/click-pos?branch=main)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://prettier.io/)
 
 ---
-
-## 🚀 Live Demo
-
-Try click-pos in your browser:
-[https://vmaritato.github.io/click-pos/](https://vmaritato.github.io/click-pos/)
-
----
-
-> Supports MouseEvent, TouchEvent, and **PointerEvent** (for stylus, pen, and modern input devices).
 
 ## Installation
 

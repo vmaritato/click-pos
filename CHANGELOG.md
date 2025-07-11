@@ -15,4 +15,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Percent coordinates, scroll normalization, filter callback
 - Geometry utilities: distance, angle, boundingBox
 - SSR/Node.js safe, edge case handling, full test coverage
-- Professional demo, docs, CI, coverage, code style, and framework examples
+- Professional docs, CI, coverage, code style, and framework examples
